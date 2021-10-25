@@ -17,7 +17,7 @@ public class ResourceMapper {
         resource.setId(resourceDTO.getId());
         resource.setName(resourceDTO.getName());
         resource.setCategory(resourceDTO.getCategory());
-        resource.setType(resourceDTO.getCategory());
+        resource.setType(resourceDTO.getType());
         resource.setLastBorrow(resourceDTO.getLastBorrow());
         resource.setUnitsAvailable(resourceDTO.getUnitsAvailable());
         resource.setUnitsOwed(resourceDTO.getUnitsOwed());

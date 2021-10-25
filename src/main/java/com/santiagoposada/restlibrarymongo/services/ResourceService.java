@@ -8,6 +8,7 @@ import com.santiagoposada.restlibrarymongo.respository.ResourceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -81,6 +82,7 @@ public class ResourceService {
 
         resource.setUnitsOwed(resource.getUnitsOwed() + 1);
         resource.setUnitsAvailable(resource.getUnitsAvailable() - 1);
+        resource.setLastBorrow(LocalDate.now());
         return resourceMapper.fromResourceEntityToDTO(resourceRepository.save(resource));
     }
 

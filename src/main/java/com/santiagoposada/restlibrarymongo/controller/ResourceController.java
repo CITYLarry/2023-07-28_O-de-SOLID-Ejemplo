@@ -28,7 +28,7 @@ public class ResourceController {
         return new ResponseEntity<List<ResourceDTO>>(resourceService.getAllResources(), HttpStatus.OK);
     }
 
-    @GetMapping("/add")
+    @PostMapping("/add")
     public ResponseEntity<ResourceDTO> add(@RequestBody ResourceDTO resourceDTO){
         return new ResponseEntity(resourceService.saveResource(resourceDTO), HttpStatus.OK);
     }
@@ -65,10 +65,7 @@ public class ResourceController {
     }
 
     @GetMapping("/type/{type}")
-    public ResponseEntity listByType(@PathVariable("type") String type){
+    public ResponseEntity listByType(@PathVariable("type") String type) {
         return new ResponseEntity(resourceService.getResourcesByType(type), HttpStatus.OK);
     }
-
-
-
 }
