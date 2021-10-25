@@ -19,4 +19,25 @@ public class Resource {
     private Integer unitsOwed;
     private Integer unitsAvailable;
 
+    public Resource() {
+    }
+
+    public Resource(String id, String name, String category, String type, LocalDate lastBorrow, Integer unitsOwed, Integer unitsAvailable) {
+        this.id = id;
+        this.name = name;
+        this.category = category;
+        this.type = type;
+        this.lastBorrow = lastBorrow;
+        this.unitsOwed = unitsOwed;
+        this.unitsAvailable = unitsAvailable;
+    }
+
+    public Resource(String name, String category, String type, LocalDate lastBorrow, Integer unitsOwed, Integer unitsAvailable) {
+        this.name = name;
+        this.category = category;
+        this.type = type;
+        this.lastBorrow = lastBorrow;
+        this.unitsOwed = unitsOwed;
+        this.unitsAvailable = unitsAvailable;
+    }
 }
