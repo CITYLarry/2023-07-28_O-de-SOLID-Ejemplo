@@ -8,5 +8,4 @@ import java.util.List;
 public interface ResourceRepository extends MongoRepository<Resource, String> {
     List<Resource> findByType(final String type);
     List<Resource> findByCategory(final String category);
-    List<Resource> findByTypeAndCategory(final String type, final String category);
 }
