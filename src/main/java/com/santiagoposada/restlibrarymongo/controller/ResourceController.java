@@ -61,11 +61,11 @@ public class ResourceController {
 
     @GetMapping("/category/{category}")
     public ResponseEntity listByCategory(@PathVariable("category") String category){
-        return new ResponseEntity(resourceService.getResourceByCategory(category), HttpStatus.OK);
+        return null;
     }
 
     @GetMapping("/type/{type}")
     public ResponseEntity listByType(@PathVariable("type") String type) {
-        return new ResponseEntity(resourceService.getResourcesByType(type), HttpStatus.OK);
+        return null;
     }
 }

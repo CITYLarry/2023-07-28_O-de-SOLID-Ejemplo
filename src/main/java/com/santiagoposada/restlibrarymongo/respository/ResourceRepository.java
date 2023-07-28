@@ -8,6 +8,4 @@ import java.util.List;
 
 @Repository
 public interface ResourceRepository extends JpaRepository<Resource, Integer> {
-    List<Resource> findByType(final String type);
-    List<Resource> findByCategory(final String category);
 }

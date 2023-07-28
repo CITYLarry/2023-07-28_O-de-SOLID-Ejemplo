@@ -59,17 +59,7 @@ public class ResourceService {
         return false;
     }
 
-    public List<ResourceDTO> getResourcesByType(String type){
-        Objects.requireNonNull(type);
-        List<Resource> list = resourceRepository.findByType(type);
-        return resourceMapper.fromEntityListToDtoList(list);
-    }
 
-    public List<ResourceDTO> getResourceByCategory(String category){
-        Objects.requireNonNull(category);
-        List<Resource> list = resourceRepository.findByCategory(category);
-        return resourceMapper.fromEntityListToDtoList(list);
-    }
 
     public ResourceDTO borrowABook(Integer id){
         Objects.requireNonNull(id);
