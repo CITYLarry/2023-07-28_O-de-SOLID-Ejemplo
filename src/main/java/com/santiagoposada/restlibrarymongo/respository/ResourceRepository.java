@@ -1,11 +1,13 @@
 package com.santiagoposada.restlibrarymongo.respository;
 
 import com.santiagoposada.restlibrarymongo.entity.Resource;
-import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-public interface ResourceRepository extends MongoRepository<Resource, String> {
+@Repository
+public interface ResourceRepository extends JpaRepository<Resource, Integer> {
     List<Resource> findByType(final String type);
     List<Resource> findByCategory(final String category);
 }

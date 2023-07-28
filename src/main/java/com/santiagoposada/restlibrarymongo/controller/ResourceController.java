@@ -19,7 +19,7 @@ public class ResourceController {
     private ResourceService resourceService;
 
     @GetMapping("/{id}")
-    public ResponseEntity<ResourceDTO> getResourceByID(@PathVariable("id") String id){
+    public ResponseEntity<ResourceDTO> getResourceByID(@PathVariable("id") Integer id){
         return new ResponseEntity(resourceService.getResourceById(id), HttpStatus.OK);
     }
 
@@ -39,23 +39,23 @@ public class ResourceController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity delete(@PathVariable("id") String id){
+    public ResponseEntity delete(@PathVariable("id") Integer id){
         resourceService.deleteResource(id);
         return new ResponseEntity("The book with id: " + id + "has been deleted", HttpStatus.OK);
     }
 
     @GetMapping("/isAvailable/{id}")
-    public ResponseEntity checkForAvailablility(@PathVariable("id") String id){
+    public ResponseEntity checkForAvailablility(@PathVariable("id") Integer id){
         return new ResponseEntity(resourceService.isAvailable(id), HttpStatus.OK);
     }
 
     @PutMapping("/borrow/{id}")
-    public ResponseEntity borrowResource(@PathVariable("id") String id){
+    public ResponseEntity borrowResource(@PathVariable("id") Integer id){
         return new ResponseEntity(resourceService.borrowABook(id), HttpStatus.OK);
     }
 
     @PutMapping("/return/{id}")
-    public ResponseEntity returnResource(@PathVariable("id") String id){
+    public ResponseEntity returnResource(@PathVariable("id") Integer id){
         return new ResponseEntity(resourceService.returnABook(id), HttpStatus.OK);
     }
 

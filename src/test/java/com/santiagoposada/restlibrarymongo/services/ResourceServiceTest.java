@@ -36,7 +36,7 @@ class ResourceServiceTest {
     void getAllResourcesTest(){
         List<Resource> list = new ArrayList<>();
         list.add(new Resource
-                ("1",
+                (1,
                         "Harry Potter",
                         "SciPhi",
                         "Book",
@@ -44,7 +44,7 @@ class ResourceServiceTest {
                         0,
                         5));
         list.add(new Resource
-                ("2",
+                (2,
                         "Narnia",
                         "SciPhi",
                         "Book",
@@ -52,7 +52,7 @@ class ResourceServiceTest {
                         0,
                         3));
         list.add(new Resource
-                ("3",
+                (3,
                         "Game of thrones",
                         "SciPhi",
                         "Book",
@@ -73,7 +73,7 @@ class ResourceServiceTest {
     void getResourceByIdTest(){
 
         var resource = new Resource
-                ("3",
+                (3,
                         "Game of thrones",
                         "SciPhi",
                         "Book",
@@ -112,7 +112,7 @@ class ResourceServiceTest {
     @DisplayName("Update a resource")
     void updateAResource(){
         var resource = new Resource
-                ("3",
+                (3,
                         "Game of thrones",
                         "SciPhi",
                         "Book",
@@ -121,7 +121,7 @@ class ResourceServiceTest {
                         2);
 
         var resourceDto = new Resource
-                ("3",
+                (3,
                         "Game of thrones",
                         "History",
                         "Book",

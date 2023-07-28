@@ -54,7 +54,7 @@ class ResourceControllerTest {
     @DisplayName("GET /resource success")
     void testGetResourceSuccess() throws Exception {
         var resource1 = new Resource
-                ("3",
+                (3,
                         "Game of thrones",
                         "SciPhi",
                         "Book",
@@ -63,7 +63,7 @@ class ResourceControllerTest {
                         2);
 
         var resource2 = new Resource
-                ("4",
+                (4,
                         "Harry potter",
                         "History",
                         "Book",
@@ -85,7 +85,7 @@ class ResourceControllerTest {
     @DisplayName("post /library/add success")
     void testPostResourceSuccess() throws Exception {
         var resource1 = new Resource
-                ("3",
+                (3,
                         "Game of thrones",
                         "SciPhi",
                         "Book",
@@ -112,7 +112,7 @@ class ResourceControllerTest {
     @DisplayName("put /library/update success")
     void testPutResourceSuccess() throws Exception {
         var resource1 = new Resource
-                ("3",
+                (3,
                         "Game of thrones",
                         "SciPhi",
                         "Book",
@@ -139,7 +139,7 @@ class ResourceControllerTest {
     @DisplayName("get /library/id success")
     void testGetByIdResourceSuccess() throws Exception {
         var resource1 = new Resource
-                ("3",
+                (3,
                         "Game of thrones",
                         "SciPhi",
                         "Book",

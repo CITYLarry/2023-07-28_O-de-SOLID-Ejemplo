@@ -1,17 +1,21 @@
 package com.santiagoposada.restlibrarymongo.entity;
 
 import lombok.Data;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.time.LocalDate;
 
-@Document
+//@Document
+@Entity
 @Data
 public class Resource {
 
     @Id
-    private String id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
     private String name;
     private String category;
     private String type;
@@ -22,7 +26,7 @@ public class Resource {
     public Resource() {
     }
 
-    public Resource(String id, String name, String category, String type, LocalDate lastBorrow, Integer unitsOwed, Integer unitsAvailable) {
+    public Resource(Integer id, String name, String category, String type, LocalDate lastBorrow, Integer unitsOwed, Integer unitsAvailable) {
         this.id = id;
         this.name = name;
         this.category = category;

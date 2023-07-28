@@ -7,7 +7,7 @@ import java.time.LocalDate;
 @Data
 public class ResourceDTO {
 
-    private String id;
+    private Integer id;
     private String name;
     private String category;
     private String type;

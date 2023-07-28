@@ -26,7 +26,7 @@ public class ResourceService {
         return resourceMapper.fromEntityListToDtoList(resourceRepository.findAll());
     }
 
-    public ResourceDTO getResourceById(String id){
+    public ResourceDTO getResourceById(Integer id){
         Objects.requireNonNull(id);
         Resource resource = resourceRepository.findById(id).orElseThrow(()-> new RuntimeException("The resource with the id provided wasnt find"));
         return resourceMapper.fromResourceEntityToDTO(resource);
@@ -46,12 +46,12 @@ public class ResourceService {
         return resourceMapper.fromResourceEntityToDTO(resourceRepository.save(resource));
     }
 
-    public void deleteResource(String id){
+    public void deleteResource(Integer id){
         Objects.requireNonNull(id);
         resourceRepository.deleteById(id);
     }
 
-    public boolean isAvailable(String id){
+    public boolean isAvailable(Integer id){
         Objects.requireNonNull(id);
         if(getResourceById(id).getUnitsAvailable() > 0){
             return true;
@@ -71,7 +71,7 @@ public class ResourceService {
         return resourceMapper.fromEntityListToDtoList(list);
     }
 
-    public ResourceDTO borrowABook(String id){
+    public ResourceDTO borrowABook(Integer id){
         Objects.requireNonNull(id);
         if(!isAvailable(id)){
             new IllegalArgumentException("The resource that wants to be borrowed isnt available");
@@ -86,7 +86,7 @@ public class ResourceService {
         return resourceMapper.fromResourceEntityToDTO(resourceRepository.save(resource));
     }
 
-    public ResourceDTO returnABook(String id){
+    public ResourceDTO returnABook(Integer id){
         Objects.requireNonNull(id);
         if(!isAvailable(id)){
             new IllegalArgumentException("The resource that wants to be returned doesnt exist");
