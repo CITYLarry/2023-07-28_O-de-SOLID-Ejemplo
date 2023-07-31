@@ -1,0 +1,200 @@
+{
+	"info": {
+		"_postman_id": "5783c324-4cbd-4309-8769-2e127dd7d2cb",
+		"name": "Libreria SOLID",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get resource by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/{id}",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"{id}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all resources",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}",
+					"host": [
+						"{{local}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add resource",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"El Último Deseo\",\r\n    \"category\": \"Fantasia\",\r\n    \"type\": \"Digital\",\r\n    \"lastBorrow\": \"2023-07-26\",\r\n    \"unitsOwed\": 5,\r\n    \"unitsAvailable\": 4\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}/add",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete resource",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/{id}",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"{id}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check for availablility",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/isAvailable/{id}",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"isAvailable",
+						"{id}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Borrow resource",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/borrow/{id}",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"borrow",
+						"{id}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Return resource",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/return/{id}",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"return",
+						"{id}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List by category",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/category/{category}",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"category",
+						"{category}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List by type",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/type/{type}",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"type",
+						"{type}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "local",
+			"value": "http://localhost:8080/library",
+			"type": "default"
+		}
+	]
+}
